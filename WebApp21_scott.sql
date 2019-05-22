@@ -2,6 +2,9 @@ SELECT USER
 FROM DUAL;
 --==>>SCOTT
 
+SELECT *
+FROM TBL_BOARD;
+
 --○ 기존 테이블 제거
 DROP TABLE TBL_BOARD PURGE;
 --==>>Table TBL_BOARD이(가) 삭제되었습니다.
