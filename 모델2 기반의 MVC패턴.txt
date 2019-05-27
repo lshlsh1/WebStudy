@@ -108,7 +108,111 @@
 
   ·web.xml	 	→ URL 매핑
   ·MVCBegin.java	→ Controller 역할(서블릿 클래스)
+			   ------------------------------
+			   뷰 지정 경로 변경
+
   ·MVCBegin.jsp 	→ View 역할(JSP 페이지)
 
 - 사용자 최초 요청 주소
 http://localhost:8090/WebApp25/mvcbegin
+
+
+○ NVC 관련 실습 2
+
+- prj : WebApp25
+
+  ·web.xml	 	→ URL 매핑
+  ·MVCSample01.java	→ Controller 역할(서블릿 클래스)
+			   ------------------------------
+			   뷰 지정 경로 변경
+
+  ·MVCSample01.jsp 	→ View 역할(JSP 페이지)
+			   ---------------------
+			   경로 변경(WEB-INF/view/MVCBegin.jsp)
+
+- 사용자 최초 요청 주소
+http://localhost:8090/WebApp25/mvcsample01
+
+
+
+○ NVC 관련 실습 3
+
+- 모델 → 컨트롤러
+- prj : WebApp25
+
+  ·web.xml	 		→ URL 매핑
+  ·MVCSample02.java		→ Controller 역할(서블릿 클래스)
+  ·MVCSample02.jsp 		→ View 역할(JSP 페이지)
+  ·MVCSample02Model.java	→ Model 역할 (일반 자바 클래스)
+			   
+
+- 사용자 최초 요청 주소
+http://localhost:8090/WebApp25/mvcsample02
+
+
+
+○ 폼(form) 데이터 전송 및 수신 과정 비교
+  
+   ※ NVC 패턴 적용 이전 단계와 NVC 패턴 적용 이후 단계를 비교하여 이해할 수 있도록 할 것
+
+   - A
+     ·prj : WebApp26
+
+     ·HelloSend01.html
+     ·HelloReceive01.jsp
+
+     ·사용자 최초 요청 주소
+       http://localhost:8090/WebApp26/HelloSend01.html
+
+   - B
+     ·prj : WebApp27
+
+     ·web.xml
+     ·HelloSend02.html
+     ·HelloReceive02.java
+
+     ·사용자 최초 요청 주소
+       http://localhost:8090/WebApp27/HelloSend02.html
+
+   - c
+     ·prj : WebApp28
+
+     ·web.xml
+     ·HelloSend03.html (뷰페이지)
+     ·HelloSend03Controller.java
+     ·HelloReceive03Controller.java
+     ·HelloReceive03Model.java
+     ·HelloReceive03.jsp (뷰페이지)
+
+
+     ·사용자 최초 요청 주소
+       http://localhost:8090/WebApp28/hello
+
+
+-------------------------------------------------------------------------------
+
+○ 폼(form) 데이터 전송 및 수신 과정 + DB 액션 처리
+
+   - prj : WebApp29
+
+     ·WebApp29_scott.sql
+     ·Web.xml
+     ·MemberInsertForm.jsp
+     ·MemberInsert.jsp
+     ·MemberList.jsp
+
+     ·com.util.DBConn.java
+     ·com.test.mvc.MemberDTO.java
+     ·com.test.mvc.MemberDAO.java
+     ·com.test.mvc.MemberInsertFormController.java
+     ·com.test.mvc.MemberInsertFormModel.java
+     ·com.test.mvc.MemberInsertModel.java
+     ·com.test.mvc.MemberListController.java
+     ·com.test.mvc.MemberListModel.java
+
+     ·사용자 최초 요청 주소
+       http://localhost:8090/WebApp29/memberlist
+
+
+web.xml → MemberListController.java → memberList.jsp → web.xml →
+memberInsertFormController.java → MemberInsertForm → MemberInsertFormModel ?→ 
